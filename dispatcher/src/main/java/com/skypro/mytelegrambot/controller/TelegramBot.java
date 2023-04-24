@@ -13,10 +13,10 @@ import javax.annotation.PostConstruct;
 @Component
 @Log4j
 public class TelegramBot extends TelegramLongPollingBot {
-//    @Value("SashaShelterBot")
-    private String botName = "SashaShelterBot";
-//    @Value("${bot.token}")
-    private String botToken = "6257060361:AAE_ipnABRRxfbCRBrPfUERLo8mAH9LCo-Y";
+    @Value("${bot.name}")
+    private String botName;
+    @Value("${bot.token}")
+    private String botToken;
     private final UpdateController updateController;
 
     public TelegramBot(UpdateController updateController) {
